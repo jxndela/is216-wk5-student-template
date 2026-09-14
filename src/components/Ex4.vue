@@ -6,9 +6,10 @@ const items = ref(['keyboard', 'mouse', 'iPhone', 'macbook', 'adapter'])
 function deleteItem(index) {
     items.value.splice(index, 1);
 }
+const newItem = ref('')
 
 function add() {
-    items/value.push(newItem.value);
+    items.value.push(newItem.value);
     newItem.value = '';
 }
 </script>
@@ -23,7 +24,9 @@ function add() {
             <button @click="deleteItem(index)">Delete</button>
         </li>
      </ul>
-     <input v-model="newItem" @keydown.enter="add" />
-        <button @click="add">Add!</button>
+    <!-- Add new item input -->
+    <!-- On enter button, add the new item -->
+    <input v-model="newItem" @keyup.enter="add" placeholder="Add new item">
+    <button @click="add">Add</button>
    
 </template>
