@@ -23,7 +23,7 @@ function add() {
             <button @click="deleteItem(index)">Delete</button>
         </li>
      </ul>
-     <input v-model="newItem" @keydown.enter="add" placeholder="Add new item" />
+     <input v-model="newItem" @keydown.enter="add" />
         <button @click="add">Add!</button>
    
 </template>
