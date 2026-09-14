@@ -33,17 +33,20 @@ function reset() {
         <p>Current: {{ scoreA }} - {{ scoreB }}</p>
 
         <!-- B. In-template expressions go here -->
-
+        <p>Points left to win: {{ scoreA >= scoreB ? maxScore - scoreA : maxScore - scoreB }}</p>
         <!-- A. Event handlers go here -->
         <div style="display: flex; gap: 12px; margin: 12px 0;">
-            <button>+ Team A</button>
-            <button>+ Team B</button>
-            <button>Reset</button>
+            <button @click="addA">+ Team A</button>
+            <button @click="addB">+ Team B</button>
+            <button @click="reset">Reset</button>
         </div>
 
 
         <div style="margin-top: 14px;">
             <!-- C. Display winner / status here -->
+            <p v-if="scoreA < 10 && scoreB < 10">No winner yet. Keep playing!</p>
+            <p v-else-if="scoreA === 10">Winner: {{ teamA }}</p>
+            <p v-else-if="scoreB === 10">Winner: {{ teamB }}</p>
         </div>
 
 
