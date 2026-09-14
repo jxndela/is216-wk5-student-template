@@ -24,6 +24,6 @@ function add() {
         </li>
      </ul>
      <input v-model="newItem" @keydown.enter="add" placeholder="Add new item" />
-        <button @click="items.push(newItem); newItem = ''">Add Item</button>
+        <button @click="add">Add!</button>
    
 </template>
