@@ -45,10 +45,12 @@ function reset() {
 
         <div style="margin-top: 14px;">
             <!-- C. Display winner / status here -->
-            <p v-if="scoreA < 10 && scoreB < 10">No winner yet. Keep playing!</p>
+            <!-- <p v-if="scoreA < 10 && scoreB < 10">No winner yet. Keep playing!</p>
             <p v-else-if="scoreA === 10">Winner: {{ teamA }}</p>
-            <p v-else-if="scoreB === 10">Winner: {{ teamB }}</p>
-
+            <p v-else-if="scoreB === 10">Winner: {{ teamB }}</p> -->
+            <p v-if="scoreA === maxScore">Winner: {{ teamA.toUpperCase }}</p>
+            <p v-else-if="scoreB === maxScore">Winner: {{ teamB + '!' }}</p>
+            <p v-else>No winner yet. Keep playing!</p>
         </div>
 
 
