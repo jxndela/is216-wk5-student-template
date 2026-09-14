@@ -47,6 +47,7 @@ function reset() {
             <p v-if="scoreA < 10 && scoreB < 10">No winner yet. Keep playing!</p>
             <p v-else-if="scoreA === 10">Winner: {{ teamA }}</p>
             <p v-else-if="scoreB === 10">Winner: {{ teamB }}</p>
+            
         </div>
 
 
