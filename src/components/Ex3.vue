@@ -8,7 +8,22 @@ const selectedOp = ref("+")
 
 // TODO: Add Code Here
 // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
-
+function calculateResult() {
+    switch (selectedOp.value) {
+        case "+":
+            return x.value + y.value;
+        case "-":
+            return x.value - y.value;
+        case "*":
+            return x.value * y.value;
+        case "/":
+            return y.value !== 0 ? x.value / y.value : "Error: Division by zero";
+        case "%":
+            return y.value !== 0 ? x.value % y.value : "Error: Division by zero";
+        default:
+            return "Invalid operator";
+    }
+}
     
 </script>
 
@@ -20,8 +35,7 @@ const selectedOp = ref("+")
     <p>y <input v-model.number="y"></p>
 
     <p>---------------------</p>
-
-    <p>= {{ result }}</p>
+    <p>= {{ calculateResult() }}</p>
 </template>
 
 <style scoped>
