@@ -7,6 +7,10 @@ function deleteItem(index) {
     items.value.splice(index, 1);
 }
 
+function add() {
+    items/value.push(newItem.value);
+    newItem.value = '';
+}
 </script>
 
 <template>
@@ -19,7 +23,7 @@ function deleteItem(index) {
             <button @click="deleteItem(index)">Delete</button>
         </li>
      </ul>
-     <input v-model="newItem" placeholder="Add new item" />
+     <input v-model="newItem" @keydown.enter="add" placeholder="Add new item" />
         <button @click="items.push(newItem); newItem = ''">Add Item</button>
    
 </template>
