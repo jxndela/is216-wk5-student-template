@@ -7,18 +7,21 @@ const id = ref('circle')
 
 function mOver() {
     // add code here
-    
+    // the shape changes to square on mouse over
+    id.value = 'square'
+
 }
 
 function mOut() {
     // add code here
-   
+   // the shape changes back to circle on mouse out event
+    id.value = 'circle'
 }
 </script>
 
 <template>
     <!-- modify code below -->
-    <div v-bind:id="id">
+    <div v-bind:id="id" @mouseover="mOver" @mouseout="mOut">
         Mouse Over Me
     </div>
 
